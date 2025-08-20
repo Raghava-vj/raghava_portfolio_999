@@ -1,266 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="Assets/img/136-inst (2).jpg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <title>Vijaya Raghava</title>
-   <link rel="stylesheet" href="./Assets/css/styles.css">
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vijaya Raghava Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    /* ===== Global Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      line-height: 1.6;
+      background: #f5f7fa;
+      color: #333;
+    }
+    a { text-decoration: none; color: inherit; }
 
-   
+    /* ===== Navbar ===== */
+    header {
+      background: #2b5eb6;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffde59;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact_section {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 50px 20px;
+      flex-wrap: wrap;
+    }
+    .contact-left, .contact-right {
+      flex: 1;
+      min-width: 280px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease;
+    }
+    .contact-left h2, .contact-right h2 {
+      margin-bottom: 15px;
+      color: #2b5eb6;
+    }
+    .contact-detail {
+      margin: 10px 0;
+    }
+    .contact-right form input,
+    .contact-right form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+    .contact-right form button {
+      padding: 12px;
+      background: #2b5eb6;
+      border: none;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+    .contact-right form button:hover {
+      background: #204c90;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 30px;
+    }
+    footer img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .social_icons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .social_icons a {
+      font-size: 22px;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .social_icons a:hover {
+      color: #ffde59;
+      transform: scale(1.2);
+    }
+
+    /* ===== Scroll To Top ===== */
+    #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 100;
+      background: #2b5eb6;
+      color: #fff;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+    #scrollTopBtn:hover {
+      background: #204c90;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: #2b5eb6;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+        display: none;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="#home"><img src="Assets/img/profile_pic.jpg" alt="logo"></a>
-            <a href="#home"><h1><span>R</span>aghava</h1></a>
-        </div>
 
-        <div class="navigation">
-            <ul id="nav_links">
-                <a href="#home">Home</a>
-                <a href="#about">About Me</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </ul>
-            <div class="menu_icon">
-                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-            </div>
-        </div>
-        
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="logo">Vijaya Raghava</div>
+    <i class="fa-solid fa-bars menu-toggle"></i>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <button class="header_btn" type="button">
-            Download CV
-        </button>
-    </header>
-    <!--==========Header Section Ends Here============-->
-
-    <!--========Hero Section Starts Here===========-->
-    <section id="home">
-        <div class="hero">
-            <div class="hero_left_content">
-                <h6>Welcome to my World!</h6>
-                <h2>Hi, I'am <span>Raghava</span></h2>
-                <h1>Web Developer</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, sint provident vero accusamus odit earum consectetur eveniet alias quaerat, amet accusantium nostrum quo dolores sunt cum perspiciatis pariatur distinctio incidunt.</p>
-                <div class="hero_buttons">
-                    <button class="hero_btn_1" type="button">Hire Me</button>
-                    <button class="hero_btn_2" type="button">Download CV</button>
-                </div>
-            </div>
-
-            <div class="hero_right_content">
-                <img src="Assets/img/hero_left_img.png" alt="heroImg">
-            </div>
-        </div>
-        <div class="hero_svg">
-            <svg id="wave" style="transform:rotate(180deg); transition: 0.3s" viewBox="0 0 1440 210" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(231, 249, 248, 1)" offset="0%"></stop>
-                    <stop stop-color="rgba(223, 0, 0, 1)" offset="100%"></stop></linearGradient></defs>
-                    <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,126L11.4,105C22.9,84,46,42,69,49C91.4,56,114,112,137,136.5C160,161,183,154,206,126C228.6,98,251,49,274,56C297.1,63,320,126,343,136.5C365.7,147,389,105,411,94.5C434.3,84,457,105,480,115.5C502.9,126,526,126,549,115.5C571.4,105,594,84,617,70C640,56,663,49,686,59.5C708.6,70,731,98,754,101.5C777.1,105,800,84,823,70C845.7,56,869,49,891,49C914.3,49,937,56,960,80.5C982.9,105,1006,147,1029,164.5C1051.4,182,1074,175,1097,143.5C1120,112,1143,56,1166,49C1188.6,42,1211,84,1234,94.5C1257.1,105,1280,84,1303,63C1325.7,42,1349,21,1371,21C1394.3,21,1417,42,1440,59.5C1462.9,77,1486,91,1509,112C1531.4,133,1554,161,1577,175C1600,189,1623,189,1634,189L1645.7,189L1645.7,210L1634.3,210C1622.9,210,1600,210,1577,210C1554.3,210,1531,210,1509,210C1485.7,210,1463,210,1440,210C1417.1,210,1394,210,1371,210C1348.6,210,1326,210,1303,210C1280,210,1257,210,1234,210C1211.4,210,1189,210,1166,210C1142.9,210,1120,210,1097,210C1074.3,210,1051,210,1029,210C1005.7,210,983,210,960,210C937.1,210,914,210,891,210C868.6,210,846,210,823,210C800,210,777,210,754,210C731.4,210,709,210,686,210C662.9,210,640,210,617,210C594.3,210,571,210,549,210C525.7,210,503,210,480,210C457.1,210,434,210,411,210C388.6,210,366,210,343,210C320,210,297,210,274,210C251.4,210,229,210,206,210C182.9,210,160,210,137,210C114.3,210,91,210,69,210C45.7,210,23,210,11,210L0,210Z"></path></svg>
-        </div>
-    </section>
-
-
-    <!--======   About section Startes from here   ======-->
-
-    <section id="about" id="home">
-        <span>About Me</span>
-        <div class="about" data-aos="fade-up">
-            <div class="about_left">
-                <img src="Assets/img/about_img.png" alt="">
-            </div>
-
-            <div class="about_right">
-                <h1>Who Am I - "CTRL + ATL + Me"</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur tempora saepe ab fugit, voluptatum, odit delectus ipsum animi assumenda accusantium facere. Totam officia iste vitae maiores ducimus eos sunt.</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias facere, quisquam cupiditate quod illo sed! Et alias deleniti similique repellat, praesentium nihil fuga dolorem dolores error, ut, cum illo debitis.</p>
-                <div class="social_icons">
-                    <a href="https://github.com/" target="_blank" aria-label="GitHub">
-                        <i class="fa-brands fa-github" ></i></i>
-                    </a>
-                    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-    </section>
-    <!--   About Section End here    -->
-
-    <!-- Skills Section Starts from here -->
-
-    <section id="skills" id="home">
-        <h3>Skills</h3>
-        <h1>'Wait a Second Dude - Look at' <br>"My Tech Toolbox"</h1>
-        
-        <div class="skills_section">
-            <div class="card_sec_1">
-                <div class="card">
-                        <i class="fa-brands fa-html5"></i>
-                        <h2>HTML 5</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                        <h4><a href="">More</a></h4>
-                </div>
-
-                <div class="card">
-                        <i class="fa-brands fa-html5"></i>
-                        <h2>CSS 3</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                        <h4><a href="">More</a></h4>
-                </div>
-
-                <div class="card">
-                        <i class="fa-brands fa-html5"></i>
-                        <h2>Javascript</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                        <h4><a href="">More</a></h4>
-                </div>
-            </div>
-
-            <div class="card_sec_2">
-                <div class="card">
-                        <i class="fa-brands fa-html5"></i>
-                        <h2>HTML 5</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                        <h4><a href="">More</a></h4>
-                </div>
-
-                <div class="card">
-                        <i class="fa-brands fa-html5"></i>
-                        <h2>CSS 3</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                        <h4><a href="">More</a></h4>
-                </div>
-
-                <div class="card">
-                        <i class="fa-brands fa-html5"></i>
-                        <h2>Javascript</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                        <h4><a href="">More</a></h4>
-                </div>
-            </div>
-            <div class="card_sec_3">
-                <div class="card">
-                        <i class="fa-brands fa-html5"></i>
-                        <h2>HTML 5</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                        <h4><a href="">More</a></h4>
-                </div>
-
-                <div class="card">
-                        <i class="fa-brands fa-html5"></i>
-                        <h2>CSS 3</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                        <h4><a href="">More</a></h4>
-                </div>
-                                <div class="card">
-                        <i class="fa-brands fa-html5"></i>
-                        <h2>CSS 3</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                        <h4><a href="">More</a></h4>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--    skills setion ends here    -->
-
-    <!-- Projects Section Starts from here -->
-
-    <section id="projects" id="home">
-        <h1>Projects</h1>
-        <div class="projects_section">
-            <div class="project_card">
-                <img src="Assets/img/Project_img/project_demo_img.png" alt="">
-                <h2>Project 1</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                <h4><a href="">View Project</a></h4>
-            </div>
-
-            <div class="project_card">
-                <img src="Assets/img/Project_img/project_demo_img.png" alt="">
-                <h2>Project 2</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                <h4><a href="">View Project</a></h4>
-            </div>
-
-            <div class="project_card">
-                <img src="Assets/img/Project_img/project_demo_img.png" alt="">
-                <h2>Project 3</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum.</p>
-                <h4><a href="">View Project</a></h4>
-            </div>
-        </div>
-    </section>
-    <!-- Projects Section Ends here -->
-
-    <!-- Contact Section Starts from here -->
-
-    <section id="contact" id="home">
-    <h3>Connect Me</h3>
-    <h1>function <span style="color: rgb(0, 28, 0);">hireMe()</span> <br> { return 'Great Choice!' }</h1>
-    <div class="contact_section">
-        <div class="contact-left">
-            <h2>Find me</h2>
-            <p>Feel free to reach out for any requirements!</p>
-            <div class="contact-detail"><strong>Name:</strong> Vijaya Raghava</div>
-            <div class="contact-detail"><strong>Phone:</strong> <a href="tel:+917569006737">+91 7569006737</a></div>
-            <div class="contact-detail"><strong>Email:</strong> <a href="mailto:vijayaraghava756@gmail.com">vijayaraghava756@gmail.com</a></div>
-        </div>
-        <div class="contact-right">
-        <h2>Hire Me</h2>
-        <form id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="number" placeholder="Your Number" required>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        </div>
+  <!-- ===== Contact Section ===== -->
+  <section id="contact" class="contact_section">
+    <div class="contact-left">
+      <h2>Find Me</h2>
+      <p>Feel free to reach out for collaborations or freelance work!</p>
+      <div class="contact-detail"><strong>Name:</strong> Vijaya Raghava</div>
+      <div class="contact-detail"><strong>Phone:</strong> <a href="tel:+917569006737">+91 7569006737</a></div>
+      <div class="contact-detail"><strong>Email:</strong> <a href="mailto:vijayaraghava756@gmail.com">vijayaraghava756@gmail.com</a></div>
     </div>
-    </section>
+    <div class="contact-right">
+      <h2>Hire Me</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="number" placeholder="Your Number" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
 
-    <footer>
-        <div class="footer_container">
-            <img src="Assets/img/profile_pic.jpg" alt="">
-            <h1>Vijaya Raghava Vaddi</h1>
-            <p>User Sign Off! <i class="fa-regular fa-face-smile-beam" style="color: #2b5eb6;"></i></p>
-            <div class="social_icons">
-                    <a href="https://github.com/" target="_blank" aria-label="GitHub">
-                        <i class="fa-brands fa-github" ></i></i>
-                    </a>
-                    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-        </div>
-    </footer>
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="footer_container">
+      <img src="Assets/img/profile_pic.jpg" alt="">
+      <h1>Vijaya Raghava Vaddi</h1>
+      <p>User Sign Off! <i class="fa-regular fa-face-smile-beam" style="color: #2b5eb6;"></i></p>
+      <div class="social_icons">
+        <a href="https://github.com/" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
 
+  <!-- Scroll to Top Arrow -->
+  <button id="scrollTopBtn" title="Go to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
-    <!-- Scroll to Top Arrow -->
-    <button id="scrollTopBtn" title="Go to top">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
+  <script>
+    // ===== Mobile Menu Toggle =====
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector("nav ul");
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
 
+    // ===== Scroll To Top =====
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-<script src="./Assets/JS/index.js"></script>
-
+    // ===== Form Submit (Dummy) =====
+    const contactForm = document.getElementById("contactForm");
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thank you for reaching out! I'll get back to you soon.");
+      contactForm.reset();
+    });
+  </script>
 </body>
-
 </html>
