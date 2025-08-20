@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vijaya Raghava Portfolio</title>
+  <title>Raghava | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
     /* ===== Global Reset ===== */
@@ -11,145 +11,223 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
     body {
       line-height: 1.6;
-      background: #f5f7fa;
+      background: #f8f9fc;
       color: #333;
     }
-    a { text-decoration: none; color: inherit; }
 
-    /* ===== Navbar ===== */
+    /* ===== Header ===== */
     header {
-      background: #2b5eb6;
-      color: #fff;
-      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #111;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem;
     }
     .logo {
-      font-size: 22px;
+      font-size: 1.5rem;
       font-weight: bold;
-      letter-spacing: 1px;
+      color: #00bcd4;
     }
-    nav ul {
-      list-style: none;
+    .navigation ul {
       display: flex;
+      list-style: none;
       gap: 20px;
     }
-    nav ul li a {
-      color: #fff;
+    .navigation a {
+      text-decoration: none;
+      color: white;
       transition: 0.3s;
     }
-    nav ul li a:hover {
-      color: #ffde59;
+    .navigation a:hover {
+      color: #00bcd4;
     }
-    .menu-toggle {
+    .menu_icon {
       display: none;
-      font-size: 24px;
+      font-size: 1.8rem;
+      color: white;
       cursor: pointer;
     }
 
-    /* ===== Contact Section ===== */
-    .contact_section {
+    /* ===== Hero Section ===== */
+    .hero {
       display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      padding: 50px 20px;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
+      gap: 30px;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #00bcd4, #0066cc);
+      color: white;
+      text-align: center;
+      padding: 120px 20px 60px;
     }
-    .contact-left, .contact-right {
-      flex: 1;
-      min-width: 280px;
+    .hero_text h1 {
+      font-size: 2.5rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    .hero_text p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+      max-width: 500px;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: #0066cc;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      margin-top: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #333;
+      color: #fff;
+    }
+    .hero_image img {
+      width: 250px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      animation: zoomIn 1.5s ease-in-out;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #00bcd4;
+      margin: 10px auto;
+    }
+    .about p {
+      text-align: center;
+      max-width: 700px;
+      margin: 10px auto;
+      font-size: 1rem;
+    }
+
+    /* ===== Skills ===== */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 20px;
+    }
+    .card {
       background: #fff;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      animation: fadeInUp 1s ease;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
-    .contact-left h2, .contact-right h2 {
-      margin-bottom: 15px;
-      color: #2b5eb6;
+    .card:hover {
+      transform: translateY(-10px);
     }
-    .contact-detail {
-      margin: 10px 0;
+    .card i {
+      font-size: 2rem;
+      color: #00bcd4;
     }
-    .contact-right form input,
-    .contact-right form textarea {
-      width: 100%;
+
+    /* ===== Projects ===== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 20px;
+    }
+    .project_card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .project_card:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== Contact ===== */
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea, button {
       padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 8px;
       outline: none;
+      font-size: 1rem;
     }
-    .contact-right form button {
-      padding: 12px;
-      background: #2b5eb6;
-      border: none;
+    input, textarea {
+      background: #f1f1f1;
+    }
+    button {
+      background: #00bcd4;
       color: #fff;
-      border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
-      width: 100%;
-      transition: background 0.3s;
+      transition: 0.3s;
     }
-    .contact-right form button:hover {
-      background: #204c90;
+    button:hover {
+      background: #0066cc;
     }
 
     /* ===== Footer ===== */
     footer {
-      background: #222;
-      color: #fff;
+      background: #111;
+      color: #aaa;
       text-align: center;
-      padding: 30px 20px;
-      margin-top: 30px;
-    }
-    footer img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-    .social_icons {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-    .social_icons a {
-      font-size: 22px;
-      color: #fff;
-      transition: 0.3s;
-    }
-    .social_icons a:hover {
-      color: #ffde59;
-      transform: scale(1.2);
+      padding: 15px;
     }
 
-    /* ===== Scroll To Top ===== */
+    /* ===== Scroll Button ===== */
     #scrollTopBtn {
-      display: none;
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      z-index: 100;
-      background: #2b5eb6;
-      color: #fff;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      font-size: 18px;
+      background: #00bcd4;
+      color: white;
       border: none;
-      padding: 12px 15px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 20px;
+      display: none;
       transition: 0.3s;
     }
     #scrollTopBtn:hover {
-      background: #204c90;
+      background: #0066cc;
     }
 
     /* ===== Animations ===== */
@@ -157,121 +235,130 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
 
-    /* ===== Mobile ===== */
-    @media (max-width: 768px) {
-      nav ul {
+    /* ===== Responsive ===== */
+    @media(max-width: 768px) {
+      .navigation ul {
+        display: none;
         flex-direction: column;
-        background: #2b5eb6;
+        background: #111;
         position: absolute;
         top: 60px;
-        right: 0;
+        right: 20px;
         width: 200px;
         padding: 15px;
-        display: none;
+        border-radius: 10px;
       }
-      nav ul.active {
+      .navigation ul.show {
         display: flex;
       }
-      .menu-toggle {
+      .menu_icon {
         display: block;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- ===== Header ===== -->
-  <header>
-    <div class="logo">Vijaya Raghava</div>
-    <i class="fa-solid fa-bars menu-toggle"></i>
-    <nav>
-      <ul>
+  
+<!-- Header -->
+<header>
+  <div class="header">
+    <div class="logo">Raghava</div>
+    <div class="navigation">
+      <ul id="nav_links">
+        <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-  </header>
-
-  <!-- ===== Contact Section ===== -->
-  <section id="contact" class="contact_section">
-    <div class="contact-left">
-      <h2>Find Me</h2>
-      <p>Feel free to reach out for collaborations or freelance work!</p>
-      <div class="contact-detail"><strong>Name:</strong> Vijaya Raghava</div>
-      <div class="contact-detail"><strong>Phone:</strong> <a href="tel:+917569006737">+91 7569006737</a></div>
-      <div class="contact-detail"><strong>Email:</strong> <a href="mailto:vijayaraghava756@gmail.com">vijayaraghava756@gmail.com</a></div>
     </div>
-    <div class="contact-right">
-      <h2>Hire Me</h2>
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="number" placeholder="Your Number" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+    <div class="menu_icon" onclick="toggleMenu()">&#9776;</div>
+  </div>
+</header>
 
-  <!-- ===== Footer ===== -->
-  <footer>
-    <div class="footer_container">
-      <img src="Assets/img/profile_pic.jpg" alt="">
-      <h1>Vijaya Raghava Vaddi</h1>
-      <p>User Sign Off! <i class="fa-regular fa-face-smile-beam" style="color: #2b5eb6;"></i></p>
-      <div class="social_icons">
-        <a href="https://github.com/" target="_blank" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <div class="hero_text">
+    <h1>Hi, I'm Raghava 👋</h1>
+    <p>A passionate Frontend Developer who loves building clean, modern, and responsive websites with great user experience.</p>
+    <a href="#contact" class="btn">Let’s Work Together</a>
+  </div>
+  <div class="hero_image">
+    <img src="profile.png" alt="Profile Picture">
+  </div>
+</section>
 
-  <!-- Scroll to Top Arrow -->
-  <button id="scrollTopBtn" title="Go to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
+<!-- About Section -->
+<section class="about" id="about">
+  <h2>About Me</h2>
+  <p>I'm a Web Developer with 2 years of hands-on experience in crafting responsive and interactive websites. My expertise lies in frontend technologies like React, JavaScript, HTML, and CSS, while I also explore backend with Node.js.</p>
+  <p>I enjoy solving problems, learning new frameworks, and continuously improving my coding skills to stay up-to-date with the latest trends in web development.</p>
+</section>
 
-  <script>
-    // ===== Mobile Menu Toggle =====
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector("nav ul");
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-    });
+<!-- Skills Section -->
+<section class="skills_section" id="skills">
+  <h2>My Skills</h2>
+  <div class="skills">
+    <div class="card"><i class="fa-brands fa-html5"></i><h2>HTML5</h2><p>Structured, semantic, and accessible markup.</p></div>
+    <div class="card"><i class="fa-brands fa-css3-alt"></i><h2>CSS3</h2><p>Responsive layouts & modern animations.</p></div>
+    <div class="card"><i class="fa-brands fa-js"></i><h2>JavaScript</h2><p>Dynamic, interactive user experiences.</p></div>
+    <div class="card"><i class="fa-brands fa-react"></i><h2>React</h2><p>Reusable components & fast UIs.</p></div>
+    <div class="card"><i class="fa-brands fa-node"></i><h2>Node.js</h2><p>Scalable backend development.</p></div>
+  </div>
+</section>
 
-    // ===== Scroll To Top =====
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = function() {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block";
-      } else {
-        scrollTopBtn.style.display = "none";
-      }
-    };
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+<!-- Projects Section -->
+<section class="projects_section" id="projects">
+  <h2>My Projects</h2>
+  <div class="projects">
+    <div class="project_card"><h3>Portfolio Website</h3><p>A modern, responsive personal portfolio to showcase my work.</p></div>
+    <div class="project_card"><h3>Student CRM App</h3><p>A React-based student management web application with Firebase.</p></div>
+    <div class="project_card"><h3>Team Task Manager</h3><p>A collaborative task management app using Firebase and Google Drive.</p></div>
+  </div>
+</section>
 
-    // ===== Form Submit (Dummy) =====
-    const contactForm = document.getElementById("contactForm");
-    contactForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-      alert("Thank you for reaching out! I'll get back to you soon.");
-      contactForm.reset();
-    });
-  </script>
+<!-- Contact Section -->
+<section class="contact_section" id="contact">
+  <h2>Contact Me</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Raghava. All rights reserved.</p>
+</footer>
+
+<button id="scrollTopBtn">&#8679;</button>
+
+<script>
+  // Toggle Menu
+  function toggleMenu() {
+    document.getElementById("nav_links").classList.toggle("show");
+  }
+
+  // Scroll to Top
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  };
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({top: 0, behavior: "smooth"});
+  });
+</script>
+
 </body>
 </html>
